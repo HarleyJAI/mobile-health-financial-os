@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/appointment.schema.json",
+  "title": "Mobile Health Appointment Economics",
+  "type": "object",
+  "required": ["appointment_id", "service_date", "service_line", "market", "revenue"],
+  "properties": {
+    "appointment_id": {"type": "string"},
+    "service_date": {"type": "string", "format": "date"},
+    "client_id": {"type": ["string", "null"]},
+    "service_line": {"type": "string"},
+    "market": {"type": "string"},
+    "revenue": {"type": "number", "minimum": 0},
+    "clinician_cost": {"type": "number", "minimum": 0, "default": 0},
+    "travel_time_cost": {"type": "number", "minimum": 0, "default": 0},
+    "miles": {"type": "number", "minimum": 0, "default": 0},
+    "mileage_cost": {"type": "number", "minimum": 0, "default": 0},
+    "drive_minutes": {"type": "number", "minimum": 0, "default": 0},
+    "clinical_minutes": {"type": "number", "minimum": 0, "default": 0},
+    "supplies_cost": {"type": "number", "minimum": 0, "default": 0},
+    "processing_cost": {"type": "number", "minimum": 0, "default": 0},
+    "shipping_cost": {"type": "number", "minimum": 0, "default": 0},
+    "parking_tolls": {"type": "number", "minimum": 0, "default": 0},
+    "merchant_fees": {"type": "number", "minimum": 0, "default": 0},
+    "expected_recollection_cost": {"type": "number", "minimum": 0, "default": 0},
+    "other_direct_cost": {"type": "number", "minimum": 0, "default": 0},
+    "route_id": {"type": ["string", "null"]},
+    "payment_terms_days": {"type": "integer", "minimum": 0, "default": 0},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}
